@@ -15,22 +15,22 @@ var value=0;
 var count=0;
 
 function preload(){
-  forest = loadImage("images/bg1.jpg");
-  heartimg=loadImage("images/heart.png")
+  forest = loadImage("bg1.jpg");
+  heartimg=loadImage("heart.png")
 
-  p_still=loadAnimation("images/player/still/01.png","images/player/still/02.png","images/player/still/03.png","images/player/still/04.png","images/player/still/05.png","images/player/still/06.png","images/player/still/07.png","images/player/still/08.png","images/player/still/09.png","images/player/still/10.png");
-  p_walk=loadAnimation("images/player/walk/11.png","images/player/walk/12.png","images/player/walk/13.png","images/player/walk/14.png","images/player/walk/15.png","images/player/walk/16.png","images/player/walk/17.png","images/player/walk/18.png","images/player/walk/19.png","images/player/walk/20.png","images/player/walk/21.png");
-  p_hit=loadAnimation("images/player/hit/hit1.png","images/player/hit/hit2.png","images/player/hit/hit3.png","images/player/hit/hit4.png","images/player/hit/hit5.png","images/player/hit/hit6.png","images/player/hit/hit7.png","images/player/hit/hit8.png","images/player/hit/hit9.png")
-  p_shield=loadAnimation("images/player/shield/41.png","images/player/shield/42.png","images/player/shield/43.png","images/player/shield/44.png","images/player/shield/45.png","images/player/shield/46.png","images/player/shield/47.png","images/player/shield/48.png","images/player/shield/49.png","images/player/shield/50.png")
+  p_still=loadAnimation("player/still/01.png","player/still/02.png","player/still/03.png","player/still/04.png","player/still/05.png","player/still/06.png","player/still/07.png","player/still/08.png","player/still/09.png","player/still/10.png");
+  p_walk=loadAnimation("player/walk/11.png","player/walk/12.png","player/walk/13.png","player/walk/14.png","player/walk/15.png","player/walk/16.png","player/walk/17.png","player/walk/18.png","player/walk/19.png","player/walk/20.png","player/walk/21.png");
+  p_hit=loadAnimation("player/hit/hit1.png","player/hit/hit2.png","player/hit/hit3.png","player/hit/hit4.png","player/hit/hit5.png","player/hit/hit6.png","player/hit/hit7.png","player/hit/hit8.png","player/hit/hit9.png")
+  p_shield=loadAnimation("player/shield/41.png","player/shield/42.png","player/shield/43.png","player/shield/44.png","player/shield/45.png","player/shield/46.png","player/shield/47.png","player/shield/48.png","player/shield/49.png","player/shield/50.png")
 
-  a_still=loadAnimation("images/army/still/1.png","images/army/still/2.png","images/army/still/3.png","images/army/still/4.png","images/army/still/5.png","images/army/still/6.png","images/army/still/7.png","images/army/still/8.png","images/army/still/9.png","images/army/still/10.png","images/army/still/11.png","images/army/still/12.png","images/army/still/13.png","images/army/still/14.png");
-  a_walk=loadAnimation("images/army/walk/11.png","images/army/walk/12.png","images/army/walk/13.png","images/army/walk/14.png","images/army/walk/15.png","images/army/walk/16.png","images/army/walk/17.png","images/army/walk/18.png","images/army/walk/19.png","images/army/walk/20.png","images/army/walk/21.png");
-  a_hit=loadAnimation("images/army/hit/hit1.png","images/army/hit/hit2.png","images/army/hit/hit3.png","images/army/hit/hit4.png","images/army/hit/hit5.png","images/army/hit/hit6.png","images/army/hit/hit7.png","images/army/hit/hit8.png");
-  a_hurt=loadAnimation("images/army/hurt/51.png","images/army/hurt/52.png","images/army/hurt/53.png","images/army/hurt/54.png","images/army/hurt/55.png","images/army/hurt/56.png","images/army/hurt/57.png","images/army/hurt/58.png","images/army/hurt/59.png","images/army/hurt/60.png")
+  a_still=loadAnimation("army/still/1.png","army/still/2.png","army/still/3.png","army/still/4.png","army/still/5.png","army/still/6.png","army/still/7.png","army/still/8.png","army/still/9.png","army/still/10.png","army/still/11.png","army/still/12.png","army/still/13.png","army/still/14.png");
+  a_walk=loadAnimation("army/walk/11.png","army/walk/12.png","army/walk/13.png","army/walk/14.png","army/walk/15.png","army/walk/16.png","army/walk/17.png","army/walk/18.png","army/walk/19.png","army/walk/20.png","army/walk/21.png");
+  a_hit=loadAnimation("army/hit/hit1.png","army/hit/hit2.png","army/hit/hit3.png","army/hit/hit4.png","army/hit/hit5.png","army/hit/hit6.png","army/hit/hit7.png","army/hit/hit8.png");
+  a_hurt=loadAnimation("army/hurt/51.png","army/hurt/52.png","army/hurt/53.png","army/hurt/54.png","army/hurt/55.png","army/hurt/56.png","army/hurt/57.png","army/hurt/58.png","army/hurt/59.png","army/hurt/60.png")
 
-  b_still=loadAnimation("images/boss/still/1.png","images/boss/still/2.png","images/boss/still/3.png","images/boss/still/4.png","images/boss/still/5.png","images/boss/still/6.png","images/boss/still/7.png","images/boss/still/8.png","images/boss/still/9.png","images/boss/still/10.png");
-  b_hit=loadAnimation("images/boss/hit/1.png","images/boss/hit/2.png","images/boss/hit/3.png","images/boss/hit/4.png","images/boss/hit/5.png","images/boss/hit/6.png","images/boss/hit/7.png","images/boss/hit/8.png","images/boss/hit/9.png","images/boss/hit/10.png",)
-  b_hurt=loadAnimation("images/boss/hurt/1.png","images/boss/hurt/2.png","images/boss/hurt/3.png","images/boss/hurt/4.png","images/boss/hurt/5.png","images/boss/hurt/6.png","images/boss/hurt/7.png","images/boss/hurt/8.png","images/boss/hurt/9.png","images/boss/hurt/10.png",);
+  b_still=loadAnimation("boss/still/1.png","boss/still/2.png","boss/still/3.png","boss/still/4.png","boss/still/5.png","boss/still/6.png","boss/still/7.png","boss/still/8.png","boss/still/9.png","boss/still/10.png");
+  b_hit=loadAnimation("boss/hit/1.png","boss/hit/2.png","boss/hit/3.png","boss/hit/4.png","boss/hit/5.png","boss/hit/6.png","boss/hit/7.png","boss/hit/8.png","boss/hit/9.png","boss/hit/10.png",)
+  b_hurt=loadAnimation("boss/hurt/1.png","boss/hurt/2.png","boss/hurt/3.png","boss/hurt/4.png","boss/hurt/5.png","boss/hurt/6.png","boss/hurt/7.png","boss/hurt/8.png","boss/hurt/9.png","boss/hurt/10.png",);
 
 }
 
